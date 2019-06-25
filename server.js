@@ -5,16 +5,16 @@ var app = express();
 var empinfoController=function(req, res){
   console.log("Invoking  rest api for product list");
   var empinfo = [
-    {empid:1, employee:"Akshay",designation:"developer", dob:"12-12-1995"},
-    {empid:2, employee:"Aditya",designation:"tester", dob:"1-1-1996"},
-    {empid:3, employee:"Ankita",designation:"devOps", dob:"10-10-94"}
+    {empid:1, employee:"Akshay",designation:"developer", dob:"12-12-1995", location:"Delhi", feedback:"default"},
+    {empid:2, employee:"Aditya",designation:"tester", dob:"1-1-1996",location:"Pune",feedback:"default"},
+    {empid:3, employee:"Ankita",designation:"devOps", dob:"10-10-94",location:"Mumbai",feedback:"default"}
   ];
   res.send(empinfo);
 };
 
 // setting router to map requests  with controllers
 
-app.post('/empinfo',empinfoController);
+app.get('/empinfo',empinfoController);
 
 var server = app.listen(8087, function () {
   var host = server.address().address
