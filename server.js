@@ -14,7 +14,7 @@ var empinfoController=function(req, res){
 
 // setting router to map requests  with controllers
 
-app.get('/empinfo',empinfoController);
+app.post('/empinfo',empinfoController);
 
 var server = app.listen(8087, function () {
   var host = server.address().address
